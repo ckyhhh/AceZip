@@ -37,7 +37,7 @@ public:
     bool RegisterShellExtension();
     bool UnregisterShellExtension();
 
-    HINSTANCE instance() const { return hInstance_; }
+    HINSTANCE hinstance() const { return hInstance_; }
     int cmd_show() const { return nCmdShow_; }
 
 private:
