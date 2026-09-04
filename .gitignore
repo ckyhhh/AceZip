@@ -34,16 +34,8 @@ cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 
-# 第三方库源码（需要单独下载）
-third_party/zlib-*/
-third_party/minizip-ng-*/
-third_party/lzma-*/
-third_party/bzip2-*/
-third_party/xz-*/
-third_party/zstd-*/
-third_party/lz4-*/
-third_party/unrar*/
-third_party/duilib/
+# 第三方库源码已随仓库提交（vendored），不再忽略
+# 如需更新依赖，直接替换 third_party/ 下对应目录即可
 
 # 临时文件
 *.tmp
