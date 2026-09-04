@@ -218,10 +218,11 @@ set_target_properties(lzma_sdk PROPERTIES
 
 # ===========================================================================
 # unRAR (7.x) - RAR 解压
+# unRAR 的 rar.cpp 通过 #include 包含了所有其他 .cpp 文件，
+# 所以只需编译 rar.cpp 一个文件即可（否则会重复定义符号）
 # ===========================================================================
 set(UNRAR_ROOT ${TP_DIR}/unrar)
-file(GLOB UNRAR_SOURCES ${UNRAR_ROOT}/*.cpp)
-add_library(unrar STATIC ${UNRAR_SOURCES})
+add_library(unrar STATIC ${UNRAR_ROOT}/rar.cpp)
 target_include_directories(unrar PUBLIC ${UNRAR_ROOT})
 target_compile_definitions(unrar PRIVATE
     SILENT RAR_NOCRYPT UNRAR _CONSOLE
