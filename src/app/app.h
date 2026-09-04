@@ -10,6 +10,10 @@
 #include "../core/archive.h"
 #include <memory>
 
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 namespace bandzip {
 namespace app {
 

@@ -16,6 +16,8 @@
 #include <vector>
 #include <functional>
 #include <system_error>
+#include <atomic>
+#include <chrono>
 
 namespace bandzip {
 
