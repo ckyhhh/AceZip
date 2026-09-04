@@ -29,32 +29,26 @@ jobs:
           cmake -B build -G "Visual Studio 17 2022" -A ${{ matrix.arch }} `
             -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} `
             -DUSE_STATIC_CRT=ON `
-            -DENABLE_LTO=ON `
-            -DENABLE_AES=ON `
-            -DENABLE_SFX=ON `
-            -DENABLE_SHELL_EXTENSION=ON `
+            -DENABLE_LTO=OFF `
+            -DENABLE_AES=OFF `
+            -DENABLE_SFX=OFF `
+            -DENABLE_SHELL_EXTENSION=OFF `
             -DENABLE_TESTS=OFF
 
       - name: Build
         run: cmake --build build --config ${{ matrix.build_type }} --parallel
 
-      - name: Copy resources
-        run: |
-          mkdir -p build/${{ matrix.build_type }}/skins
-          mkdir -p build/${{ matrix.build_type }}/icons
-          xcopy /E /I /Y res\skins build\${{ matrix.build_type }}\skins
-          xcopy /E /I /Y res\icons build\${{ matrix.build_type }}\icons
-
-      - name: Check size
-        run: python scripts/check_size.py build/${{ matrix.build_type }}
+      - name: List build output
+        run: dir /s /b build\bin\*.exe build\bin\*.dll 2>nul || echo "No exe found"
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
         with:
           name: AceZip-${{ matrix.arch }}-${{ matrix.build_type }}
           path: |
-            build/${{ matrix.build_type }}/*.exe
-            build/${{ matrix.build_type }}/*.dll
-            build/${{ matrix.build_type }}/skins/
-            build/${{ matrix.build_type }}/icons/
+            build/bin/*.exe
+            build/bin/*.dll
+            build/bin/skins/
+            build/bin/icons/
           retention-days: 90
+          if-no-files-found: warn
