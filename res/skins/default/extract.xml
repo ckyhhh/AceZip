@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================================
+  extract.xml - 解压对话框皮肤
+  ============================================================================
+-->
+<Window size="500,420" caption="0,0,0,32">
+  <Font name="Microsoft YaHei UI" size="9" default="true" />
+  <Font name="Microsoft YaHei UI" size="10" bold="true" id="1" />
+
+  <VerticalLayout bkcolor="#FFFFFFFF">
+    <!-- 标题栏 -->
+    <HorizontalLayout height="32" bkcolor="#FF2D2D30">
+      <Label text="解压" font="1" textColor="#FFFFFFFF" padding="8,8,0,0"/>
+      <Control />
+      <Button name="btn_close" width="28" height="16" padding="0,8,0,0"
+              normalimage="file='icons/close.png'"
+              hotimage="file='icons/close_hover.png'"
+              pushedimage="file='icons/close_pushed.png'"/>
+    </HorizontalLayout>
+
+    <!-- 内容 -->
+    <VerticalLayout inset="12,12,12,12">
+      <!-- 压缩包路径 -->
+      <HorizontalLayout height="28">
+        <Label text="压缩包：" width="70" height="22" padding="0,2,0,0"/>
+        <Edit name="edit_archive" height="22" readonly="true"
+              bkcolor="#FFF8F8F8" bordercolor="#FFCCCCCC" bordersize="1"/>
+      </HorizontalLayout>
+      <Control height="8" />
+
+      <!-- 解压到 -->
+      <HorizontalLayout height="28">
+        <Label text="解压到：" width="70" height="22" padding="0,2,0,0"/>
+        <Edit name="edit_dest" height="22"
+              bkcolor="#FFFFFFFF" bordercolor="#FFCCCCCC" bordersize="1"/>
+        <Button name="btn_browse" text="浏览..." width="60" height="22"
+                padding="4,0,0,0" normalimage="file='icons/btn_normal.png'"
+                hotimage="file='icons/btn_hover.png'"
+                pushedimage="file='icons/btn_pushed.png'"/>
+      </HorizontalLayout>
+      <Control height="8" />
+
+      <!-- 选项 -->
+      <VerticalLayout inset="0,4,0,4">
+        <Check name="chk_overwrite" text="覆盖已存在的文件" height="20" selected="true"/>
+        <Check name="chk_keep_paths" text="保留完整路径" height="20" selected="true"/>
+        <Check name="chk_open_folder" text="解压后打开文件夹" height="20"/>
+        <Check name="chk_delete_archive" text="解压后删除压缩包" height="20"/>
+      </VerticalLayout>
+      <Control height="8" />
+
+      <!-- 密码 -->
+      <HorizontalLayout height="28">
+        <Label text="密码：" width="70" height="22" padding="0,2,0,0"/>
+        <Edit name="edit_password" height="22" password="true"
+              bkcolor="#FFFFFFFF" bordercolor="#FFCCCCCC" bordersize="1"/>
+      </HorizontalLayout>
+      <Control height="8" />
+
+      <!-- 编码 -->
+      <HorizontalLayout height="28">
+        <Label text="文件名编码：" width="70" height="22" padding="0,2,0,0"/>
+        <Combo name="combo_encoding" height="22" width="200"
+               bkcolor="#FFFFFFFF" bordercolor="#FFCCCCCC" bordersize="1">
+          <ListHeaderItem text="自动检测" />
+          <ListHeaderItem text="UTF-8" />
+          <ListHeaderItem text="GBK (简体中文)" />
+          <ListHeaderItem text="Big5 (繁体中文)" />
+          <ListHeaderItem text="Shift-JIS (日文)" />
+          <ListHeaderItem text="EUC-KR (韩文)" />
+        </Combo>
+      </HorizontalLayout>
+      <Control height="8" />
+
+      <Control />
+      <HorizontalLayout height="32" inset="0,4,0,0">
+        <Control />
+        <Button name="btn_ok" text="确定" width="80" height="28"
+                normalimage="file='icons/btn_normal.png'"
+                hotimage="file='icons/btn_hover.png'"
+                pushedimage="file='icons/btn_pushed.png'"/>
+        <Control width="8" />
+        <Button name="btn_cancel" text="取消" width="80" height="28"
+                normalimage="file='icons/btn_normal.png'"
+                hotimage="file='icons/btn_hover.png'"
+                pushedimage="file='icons/btn_pushed.png'"/>
+      </HorizontalLayout>
+    </VerticalLayout>
+  </VerticalLayout>
+</Window>

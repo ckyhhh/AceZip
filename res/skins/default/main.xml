@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================================
+  main.xml - 主窗口皮肤
+  ============================================================================
+  BandzipClone 主窗口布局。
+  包含：菜单栏、工具栏、地址栏、文件列表、状态栏。
+  ============================================================================
+-->
+<Window size="900,600" mininfo="640,400" caption="0,0,0,32" roundcorner="2,2">
+  <Font name="Microsoft YaHei UI" size="9" default="true" />
+  <Font name="Microsoft YaHei UI" size="10" bold="true" id="1" />
+  <Font name="Microsoft YaHei UI" size="8" id="2" />
+
+  <VerticalLayout bkcolor="#FFFFFFFF" bkcolor2="#FFF0F0F0">
+    <!-- 标题栏 -->
+    <HorizontalLayout height="32" bkcolor="#FF2D2D30">
+      <HorizontalLayout width="28">
+        <Button name="btn_app_icon" width="16" height="16" padding="6,8,0,0"
+                normalimage="file='icons/app.png'"/>
+      </HorizontalLayout>
+      <Label name="lbl_title" text="BandzipClone" font="1"
+              textColor="#FFFFFFFF" padding="4,8,0,0"/>
+      <Control />
+      <Button name="btn_min" width="28" height="16" padding="0,8,0,0"
+              normalimage="file='icons/min.png'"
+              hotimage="file='icons/min_hover.png'"
+              pushedimage="file='icons/min_pushed.png'"/>
+      <Button name="btn_max" width="28" height="16" padding="0,8,0,0"
+              normalimage="file='icons/max.png'"
+              hotimage="file='icons/max_hover.png'"
+              pushedimage="file='icons/max_pushed.png'"/>
+      <Button name="btn_close" width="28" height="16" padding="0,8,0,0"
+              normalimage="file='icons/close.png'"
+              hotimage="file='icons/close_hover.png'"
+              pushedimage="file='icons/close_pushed.png'"/>
+    </HorizontalLayout>
+
+    <!-- 菜单栏 -->
+    <HorizontalLayout height="24" bkcolor="#FFF5F5F5">
+      <Button name="menu_file" text="文件(&amp;F)" width="50" height="20" padding="4,2,0,0"
+              textcolor="#FF333333" hottextcolor="#FF0066CC"/>
+      <Button name="menu_edit" text="编辑(&amp;E)" width="50" height="20"
+              textcolor="#FF333333" hottextcolor="#FF0066CC"/>
+      <Button name="menu_view" text="视图(&amp;V)" width="50" height="20"
+              textcolor="#FF333333" hottextcolor="#FF0066CC"/>
+      <Button name="menu_tools" text="工具(&amp;T)" width="50" height="20"
+              textcolor="#FF333333" hottextcolor="#FF0066CC"/>
+      <Button name="menu_help" text="帮助(&amp;H)" width="50" height="20"
+              textcolor="#FF333333" hottextcolor="#FF0066CC"/>
+      <Control />
+    </HorizontalLayout>
+
+    <!-- 工具栏 -->
+    <HorizontalLayout height="36" bkcolor="#FFE8E8E8" inset="2,2,2,2">
+      <Button name="btn_new" width="28" height="28" padding="2,0,0,0"
+              normalimage="file='icons/new.png'"
+              hotimage="file='icons/new_hover.png'"
+              pushedimage="file='icons/new_pushed.png'"
+              tooltip="新建压缩包"/>
+      <Button name="btn_open" width="28" height="28" padding="2,0,0,0"
+              normalimage="file='icons/open.png'"
+              hotimage="file='icons/open_hover.png'"
+              pushedimage="file='icons/open_pushed.png'"
+              tooltip="打开压缩包"/>
+      <Control width="4" />
+      <Button name="btn_extract" width="28" height="28" padding="2,0,0,0"
+              normalimage="file='icons/extract.png'"
+              hotimage="file='icons/extract_hover.png'"
+              pushedimage="file='icons/extract_pushed.png'"
+              tooltip="解压到..."/>
+      <Button name="btn_add" width="28" height="28" padding="2,0,0,0"
+              normalimage="file='icons/add.png'"
+              hotimage="file='icons/add_hover.png'"
+              pushedimage="file='icons/add_pushed.png'"
+              tooltip="添加文件"/>
+      <Button name="btn_test" width="28" height="28" padding="2,0,0,0"
+              normalimage="file='icons/test.png'"
+              hotimage="file='icons/test_hover.png'"
+              pushedimage="file='icons/test_pushed.png'"
+              tooltip="测试压缩包"/>
+      <Button name="btn_delete" width="28" height="28" padding="2,0,0,0"
+              normalimage="file='icons/delete.png'"
+              hotimage="file='icons/delete_hover.png'"
+              pushedimage="file='icons/delete_pushed.png'"
+              tooltip="删除"/>
+      <Control width="4" />
+      <Button name="btn_back" width="28" height="28" padding="2,0,0,0"
+              normalimage="file='icons/back.png'"
+              hotimage="file='icons/back_hover.png'"
+              pushedimage="file='icons/back_pushed.png'"
+              tooltip="后退"/>
+      <Button name="btn_up" width="28" height="28" padding="2,0,0,0"
+              normalimage="file='icons/up.png'"
+              hotimage="file='icons/up_hover.png'"
+              pushedimage="file='icons/up_pushed.png'"
+              tooltip="上一级"/>
+      <Button name="btn_find" width="28" height="28" padding="2,0,0,0"
+              normalimage="file='icons/find.png'"
+              hotimage="file='icons/find_hover.png'"
+              pushedimage="file='icons/find_pushed.png'"
+              tooltip="查找"/>
+      <Button name="btn_info" width="28" height="28" padding="2,0,0,0"
+              normalimage="file='icons/info.png'"
+              hotimage="file='icons/info_hover.png'"
+              pushedimage="file='icons/info_pushed.png'"
+              tooltip="属性"/>
+      <Control />
+      <Button name="btn_options" width="28" height="28" padding="0,0,2,0"
+              normalimage="file='icons/options.png'"
+              hotimage="file='icons/options_hover.png'"
+              pushedimage="file='icons/options_pushed.png'"
+              tooltip="选项"/>
+    </HorizontalLayout>
+
+    <!-- 地址栏 -->
+    <HorizontalLayout height="28" bkcolor="#FFFFFFFF" inset="4,2,4,2">
+      <Label text="地址：" width="40" height="20" padding="0,2,0,0"
+              textcolor="#FF666666"/>
+      <Edit name="edit_address" height="22" bkcolor="#FFF8F8F8"
+            bordercolor="#FFCCCCCC" bordersize="1" />
+    </HorizontalLayout>
+
+    <!-- 文件列表 -->
+    <VerticalLayout bkcolor="#FFFFFFFF">
+      <List name="list" header="true" headerheight="24"
+            bkcolor="#FFFFFFFF" itemcolor="#FF333333"
+            itemaltcolor="#FFF8F8F8" itemhotcolor="#FFE6F2FF"
+            itemselectedcolor="#FFCCE4FF"
+            itemshowrowline="true" itemshowcolumnline="false">
+        <ListHeader>
+          <ListHeaderItem text="名称" width="300" />
+          <ListHeaderItem text="大小" width="100" />
+          <ListHeaderItem text="压缩后" width="100" />
+          <ListHeaderItem text="类型" width="80" />
+          <ListHeaderItem text="修改时间" width="140" />
+          <ListHeaderItem text="CRC32" width="80" />
+          <ListHeaderItem text="压缩率" width="60" />
+        </ListHeader>
+      </List>
+    </VerticalLayout>
+
+    <!-- 状态栏 -->
+    <HorizontalLayout height="22" bkcolor="#FFF0F0F0" inset="4,0,4,0">
+      <Label name="lbl_status_count" text="0 个项目" width="120" height="20"
+              padding="0,1,0,0" textcolor="#FF666666" font="2"/>
+      <Label name="lbl_status_size" text="总大小: 0 B" width="180" height="20"
+              padding="0,1,0,0" textcolor="#FF666666" font="2"/>
+      <Label name="lbl_status_ratio" text="压缩率: -" width="120" height="20"
+              padding="0,1,0,0" textcolor="#FF666666" font="2"/>
+      <Control />
+      <Label name="lbl_status_info" text="就绪" height="20"
+              padding="0,1,0,0" textcolor="#FF999999" font="2"/>
+    </HorizontalLayout>
+  </VerticalLayout>
+</Window>

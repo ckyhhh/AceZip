@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================================
+  progress.xml - 进度对话框皮肤
+  ============================================================================
+-->
+<Window size="480,200" caption="0,0,0,32">
+  <Font name="Microsoft YaHei UI" size="9" default="true" />
+  <Font name="Microsoft YaHei UI" size="10" bold="true" id="1" />
+
+  <VerticalLayout bkcolor="#FFFFFFFF">
+    <HorizontalLayout height="32" bkcolor="#FF2D2D30">
+      <Label name="lbl_title" text="处理中" font="1" textColor="#FFFFFFFF" padding="8,8,0,0"/>
+      <Control />
+      <Button name="btn_close" width="28" height="16" padding="0,8,0,0"
+              normalimage="file='icons/close.png'"
+              hotimage="file='icons/close_hover.png'"
+              pushedimage="file='icons/close_pushed.png'"/>
+    </HorizontalLayout>
+
+    <VerticalLayout inset="16,16,16,16">
+      <Label name="lbl_file" text="" height="40" textcolor="#FF333333"/>
+      <Control height="8" />
+      <Progress name="progress" height="18" min="0" max="100" value="0"
+                hor="true" bkcolor="#FFE0E0E0" forecolor="#FF0078D4"/>
+      <Control height="8" />
+      <HorizontalLayout height="20">
+        <Label name="lbl_percent" text="0%" width="60" textcolor="#FF666666"/>
+        <Label name="lbl_speed" text="" width="160" textcolor="#FF666666"/>
+        <Label name="lbl_time_left" text="" textcolor="#FF666666"/>
+      </HorizontalLayout>
+      <Control />
+      <HorizontalLayout height="32" inset="0,4,0,0">
+        <Control />
+        <Button name="btn_cancel" text="取消" width="80" height="28"/>
+      </HorizontalLayout>
+    </VerticalLayout>
+  </VerticalLayout>
+</Window>

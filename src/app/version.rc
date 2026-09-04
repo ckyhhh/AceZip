@@ -1,0 +1,83 @@
+// ============================================================================
+// version.rc - 版本信息资源
+//
+// BandzipClone - 类 Bandizip 的开源解压缩软件
+// Copyright (C) 2024 BandzipClone Contributors
+// Licensed under AGPLv3
+// ============================================================================
+#include "../ui/resource.h"
+
+#include <windows.h>
+
+// ---------------------------------------------------------------------------
+// 版本信息
+// ---------------------------------------------------------------------------
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     0,9,0,0
+PRODUCTVERSION  0,9,0,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       0
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName",      "BandzipClone Contributors"
+            VALUE "FileDescription",  "BandzipClone - Open-source Bandizip-like archiver"
+            VALUE "FileVersion",      "0.9.0.0"
+            VALUE "InternalName",     "bandzip"
+            VALUE "LegalCopyright",   "Copyright (C) 2024, AGPLv3"
+            VALUE "LegalTrademarks",  ""
+            VALUE "OriginalFilename", "bandzip.exe"
+            VALUE "ProductName",      "BandzipClone"
+            VALUE "ProductVersion",   "0.9.0.0"
+            VALUE "Comments",         "https://github.com/bandzipclone/bandzipclone"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 0x04B0
+    END
+END
+
+// ---------------------------------------------------------------------------
+// 图标
+// ---------------------------------------------------------------------------
+IDI_APP_ICON           ICON "icons/app.ico"
+IDI_APP_ICON_SMALL     ICON "icons/app_small.ico"
+
+// 工具栏图标
+IDI_NEW                ICON "icons/new.ico"
+IDI_OPEN               ICON "icons/open.ico"
+IDI_EXTRACT            ICON "icons/extract.ico"
+IDI_ADD                ICON "icons/add.ico"
+IDI_TEST               ICON "icons/test.ico"
+IDI_DELETE             ICON "icons/delete.ico"
+IDI_FIND               ICON "icons/find.ico"
+IDI_BACK               ICON "icons/back.ico"
+IDI_UP                 ICON "icons/up.ico"
+IDI_INFO               ICON "icons/info.ico"
+IDI_OPTIONS            ICON "icons/options.ico"
+
+// 文件类型图标
+IDI_FILE_ZIP           ICON "icons/file_zip.ico"
+IDI_FILE_7Z            ICON "icons/file_7z.ico"
+IDI_FILE_RAR           ICON "icons/file_rar.ico"
+IDI_FILE_TAR           ICON "icons/file_tar.ico"
+IDI_FILE_GZ            ICON "icons/file_gz.ico"
+IDI_FILE_BZ2           ICON "icons/file_bz2.ico"
+IDI_FILE_XZ            ICON "icons/file_xz.ico"
+IDI_FILE_ZST           ICON "icons/file_zst.ico"
+IDI_FILE_LZ4           ICON "icons/file_lz4.ico"
+IDI_FILE_CAB           ICON "icons/file_cab.ico"
+IDI_FILE_UNKNOWN       ICON "icons/file_unknown.ico"
+IDI_FOLDER              ICON "icons/folder.ico"
+IDI_FOLDER_OPEN        ICON "icons/folder_open.ico"
+
+// ---------------------------------------------------------------------------
+// 清单文件（启用视觉样式 + DPI 感知 + Win7 兼容）
+// ---------------------------------------------------------------------------
+1 24 "app.manifest"

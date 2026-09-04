@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================================
+  compress.xml - 压缩对话框皮肤
+  ============================================================================
+-->
+<Window size="520,560" caption="0,0,0,32">
+  <Font name="Microsoft YaHei UI" size="9" default="true" />
+  <Font name="Microsoft YaHei UI" size="10" bold="true" id="1" />
+
+  <VerticalLayout bkcolor="#FFFFFFFF">
+    <!-- 标题栏 -->
+    <HorizontalLayout height="32" bkcolor="#FF2D2D30">
+      <Label text="新建压缩包" font="1" textColor="#FFFFFFFF" padding="8,8,0,0"/>
+      <Control />
+      <Button name="btn_close" width="28" height="16" padding="0,8,0,0"
+              normalimage="file='icons/close.png'"
+              hotimage="file='icons/close_hover.png'"
+              pushedimage="file='icons/close_pushed.png'"/>
+    </HorizontalLayout>
+
+    <!-- 内容 -->
+    <VerticalLayout inset="12,12,12,12">
+      <!-- 压缩包路径 -->
+      <HorizontalLayout height="28">
+        <Label text="压缩包：" width="80" height="22" padding="0,2,0,0"/>
+        <Edit name="edit_archive" height="22"
+              bkcolor="#FFFFFFFF" bordercolor="#FFCCCCCC" bordersize="1"/>
+        <Button name="btn_browse" text="浏览..." width="60" height="22"
+                padding="4,0,0,0"/>
+      </HorizontalLayout>
+      <Control height="8" />
+
+      <!-- 格式 -->
+      <HorizontalLayout height="28">
+        <Label text="压缩格式：" width="80" height="22" padding="0,2,0,0"/>
+        <Combo name="combo_format" height="22" width="160">
+          <ListHeaderItem text="ZIP" />
+          <ListHeaderItem text="7Z" />
+          <ListHeaderItem text="TAR" />
+          <ListHeaderItem text="TAR.GZ" />
+          <ListHeaderItem text="TAR.BZ2" />
+          <ListHeaderItem text="TAR.XZ" />
+          <ListHeaderItem text="TAR.ZST" />
+        </Combo>
+      </HorizontalLayout>
+      <Control height="8" />
+
+      <!-- 压缩级别 -->
+      <HorizontalLayout height="28">
+        <Label text="压缩级别：" width="80" height="22" padding="0,2,0,0"/>
+        <Combo name="combo_level" height="22" width="160">
+          <ListHeaderItem text="仅存储" />
+          <ListHeaderItem text="最快" />
+          <ListHeaderItem text="快速" />
+          <ListHeaderItem text="标准" />
+          <ListHeaderItem text="最大" />
+          <ListHeaderItem text="极限" />
+        </Combo>
+      </HorizontalLayout>
+      <Control height="8" />
+
+      <!-- 压缩方法 -->
+      <HorizontalLayout height="28">
+        <Label text="压缩方法：" width="80" height="22" padding="0,2,0,0"/>
+        <Combo name="combo_method" height="22" width="160">
+          <ListHeaderItem text="Deflate" />
+          <ListHeaderItem text="Deflate64" />
+          <ListHeaderItem text="Bzip2" />
+          <ListHeaderItem text="LZMA" />
+          <ListHeaderItem text="Zstd" />
+        </Combo>
+      </HorizontalLayout>
+      <Control height="8" />
+
+      <!-- 字典大小 -->
+      <HorizontalLayout height="28">
+        <Label text="字典大小：" width="80" height="22" padding="0,2,0,0"/>
+        <Combo name="combo_dict" height="22" width="160">
+          <ListHeaderItem text="自动" />
+          <ListHeaderItem text="64 KB" />
+          <ListHeaderItem text="256 KB" />
+          <ListHeaderItem text="1 MB" />
+          <ListHeaderItem text="4 MB" />
+          <ListHeaderItem text="16 MB" />
+          <ListHeaderItem text="64 MB" />
+          <ListHeaderItem text="128 MB" />
+        </Combo>
+      </HorizontalLayout>
+      <Control height="8" />
+
+      <!-- 分卷 -->
+      <HorizontalLayout height="28">
+        <Label text="分卷大小：" width="80" height="22" padding="0,2,0,0"/>
+        <Combo name="combo_volume" height="22" width="160">
+          <ListHeaderItem text="不分卷" />
+          <ListHeaderItem text="100 MB (CD)" />
+          <ListHeaderItem text="700 MB (CD)" />
+          <ListHeaderItem text="4.3 GB (DVD)" />
+          <ListHeaderItem text="25 GB (BD)" />
+          <ListHeaderItem text="自定义..." />
+        </Combo>
+      </HorizontalLayout>
+      <Control height="8" />
+
+      <!-- 密码 -->
+      <HorizontalLayout height="28">
+        <Label text="密码：" width="80" height="22" padding="0,2,0,0"/>
+        <Edit name="edit_password" height="22" password="true"
+              bkcolor="#FFFFFFFF" bordercolor="#FFCCCCCC" bordersize="1"/>
+      </HorizontalLayout>
+      <Control height="4" />
+      <HorizontalLayout height="28">
+        <Label text="确认密码：" width="80" height="22" padding="0,2,0,0"/>
+        <Edit name="edit_password2" height="22" password="true"
+              bkcolor="#FFFFFFFF" bordercolor="#FFCCCCCC" bordersize="1"/>
+      </HorizontalLayout>
+      <Control height="8" />
+
+      <!-- 选项 -->
+      <VerticalLayout inset="0,4,0,4">
+        <Check name="chk_encrypt_names" text="加密文件名" height="20"/>
+        <Check name="chk_solid" text="固实压缩（仅 7Z）" height="20"/>
+        <Check name="chk_delete_after" text="压缩后删除原文件" height="20"/>
+        <Check name="chk_open_after" text="压缩后打开压缩包" height="20" selected="true"/>
+      </VerticalLayout>
+      <Control />
+
+      <!-- 按钮 -->
+      <HorizontalLayout height="32" inset="0,4,0,0">
+        <Control />
+        <Button name="btn_ok" text="确定" width="80" height="28"/>
+        <Control width="8" />
+        <Button name="btn_cancel" text="取消" width="80" height="28"/>
+      </HorizontalLayout>
+    </VerticalLayout>
+  </VerticalLayout>
+</Window>

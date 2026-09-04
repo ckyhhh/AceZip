@@ -1,0 +1,15 @@
+LZMA SDK License
+=================
+
+The LZMA SDK is written and placed in the public domain by Igor Pavlov.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or distribute
+the original LZMA SDK code, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any means.
+
+For more information, please refer to:
+  https://www.7-zip.org/sdk.html
+  https://github.com/jljusten/LZMA-SDK
+
+Version: 23.01
+Author: Igor Pavlov (https://www.7-zip.org/)
