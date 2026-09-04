@@ -241,7 +241,7 @@ set(DUILIB_BUILD_SHARED OFF CACHE BOOL "" FORCE)
 set(DUILIB_BUILD_STATIC ON CACHE BOOL "" FORCE)
 add_subdirectory(${DUILIB_ROOT}/DuiLib ${CMAKE_BINARY_DIR}/duilib EXCLUDE_FROM_ALL)
 set(DUILIB_LIBRARIES DuiLib)
-set(DUILIB_INCLUDE_DIRS ${DUILIB_ROOT})
+set(DUILIB_INCLUDE_DIRS ${DUILIB_ROOT}/DuiLib)
 
 # ---------------------------------------------------------------------------
 # 主程序源文件
